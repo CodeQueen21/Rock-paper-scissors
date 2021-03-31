@@ -43,3 +43,18 @@ function game() {
        return computerPoints++;
   } 
 }
+
+function playGame() {
+    let i = 0;
+    while (i < 5) {
+        game();
+        i++;
+    }
+    if (userPoints > computerPoints) {
+        console.log("Congradulations! You Won!!!");
+    } else {
+        console.log("awwe, looks like you lost. Better luck next time.")
+    }
+  }
+
+playGame();
