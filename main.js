@@ -1,4 +1,6 @@
 const choices = ["rock", "paper", "scissors"];
+let userPoints = 0;
+let computerPoints = 0;
 
 function computerPlay() {
   let computerChoice = choices[Math.floor(Math.random()*choices.length)];
@@ -25,10 +27,6 @@ function playRound(playerSelection, computerSelection) {
        return "Oops, something went wrong!";
      }
 }
-
-let userPoints = 0;
-let computerPoints = 0;
-
 
 function game() {
    let playerSelection = window.prompt("Please choose rock, paper or scissors");
