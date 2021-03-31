@@ -25,3 +25,21 @@ function playRound(playerSelection, computerSelection) {
        return "Oops, something went wrong!";
      }
 }
+
+let userPoints = 0;
+let computerPoints = 0;
+
+
+function game() {
+   let playerSelection = window.prompt("Please choose rock, paper or scissors");
+
+   playRound(playerSelection, computerPlay());
+   
+   if (playRound(playerSelection, computerPlay()) === "it's a tie!") {
+      return [userPoints++, computerPoints++];
+    } else if (playRound(playerSelection, computerPlay()) === "You Won!") {
+      return userPoints++;
+    } else {
+       return computerPoints++;
+  } 
+}
