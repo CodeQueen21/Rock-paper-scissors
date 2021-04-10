@@ -4,7 +4,26 @@
     text-align: center;
 }
 
+header {
+    height: 100px;
+    width: 100%;
+}
 
+#title {
+    height: 100px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#title h1 {
+    padding-top: 25px;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+}
 
 
 
