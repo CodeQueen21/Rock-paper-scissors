@@ -72,7 +72,7 @@ header {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 .option {
@@ -95,8 +95,41 @@ img {
     
 }
 
+#chosen-option {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
 
+.choice {
+  display: inline-block;
+  height: 120px;
+  width: 250px;
+}
 
+.choice h3 {
+   font-size: 20px;
+   font-weight: bold;
+   font-style: italic;
+   margin: 20px 0 20px 0
+
+}
+
+.choice p {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+#next-round {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    padding-top: 10px;
+}
 
 
 
