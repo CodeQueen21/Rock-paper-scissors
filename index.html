@@ -8,9 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet"> 
     <link href="./css/styles.css" type="text/css" rel="stylesheet">
     <link href="./css/reset.css" type="text/css" rel="stylesheet">
-    <title>Rock Paper Scissors</title>
-</head>
-<body>
     <header>
         <section id="title">
             <h1>Rock Paper Scissors</h1>
@@ -20,7 +17,64 @@
         <section id="play-btn-container">
             <button class="play-btn">Play Game</button>
         </section>
-    </main>
+        <section id="game-container">
+           <section id="scores">
+              <section id="your-score">
+                <section class="heading">
+                  <h2>Your Score</h2>
+                </section>
+              <section class="points">
+                  <p>0</p>
+              </section>
+             </section>
+             <section id="your-score" class="score">
+                <section class="heading">
+                  <h2>Round</h2>
+                </section>
+              <section class="points">
+                  <p>0</p>
+              </section>
+             </section>
+             <section id="your-score" class="score">
+                <section class="heading">
+                  <h2>Opponent</h2>
+                </section>
+              <section class="points">
+                  <p>0</p>
+              </section>
+             </section>
+           </section>
+           <section id="options">
+            <section id="rock" class="option">
+                <img src="./images/rock.jpeg" alt="rock">
+            </section>
+            <section id="paper" class="option">
+                <img src="./images/paper.jpg" alt="rock">
+            </section>
+            <section id="rock" class="option">
+                <img src="./images/scissors.jpg" alt="rock">
+            </section>
+           </section>
+           <section id="chosen-option">
+             <section id="your-choice" class="choice">
+                <h3>You chose:</h3>
+                <section>
+                    <p>N/A</p>
+                </section>
+            </section>
+            <section id="opponent-choice" class="choice">
+                <h3>Your Opponent chose:</h3>
+                <section>
+                    <p>N/A</p>
+                </section>
+            </section>
+            </section>
+            <section id="next-round">
+                <button>Play Next Round</button>
+            </section>
+        </section>
+       </main>
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>
