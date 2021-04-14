@@ -1,3 +1,4 @@
+/*
 const choices = ["rock", "paper", "scissors"];
 let userPoints = 0;
 let computerPoints = 0;
@@ -54,5 +55,40 @@ function playGame() {
         console.log("awwe, looks like you lost. Better luck next time.")
     }
   }
+*/
+//playGame();
 
-playGame();
+const playButton = document.querySelector('button');
+const body = document.querySelector('body');
+const titleContainer = document.getElementById('title');
+const title = document.querySelector('h1');
+const gameContainer = document.getElementById('game-container');
+const playButtonContainer = document.getElementById('play-btn-container');
+const chosenOptionContainer = document.getElementById('chosen-option');
+const nextRoundBtn = document.getElementById('next-round');
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click', () => {
+    rock.style.backgroundColor = 'red';
+})
+
+function addGameStyle() {
+    body.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/background.jpg)';
+    titleContainer.style.backgroundColor = 'transparent';
+    title.style.color = 'white';
+}
+
+function removeGameContainer() {
+    playButton.style.display = 'none';
+    playButtonContainer.style.display = 'none';
+    gameContainer.style.display = 'block';
+    chosenOptionContainer.style.display = 'none';
+    nextRoundBtn.style.display = 'none';
+}
+
+playButton.addEventListener('click', () => {
+    addGameStyle();
+    removeGameContainer();
+})
