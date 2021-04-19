@@ -45,7 +45,6 @@ header {
 #game-container {
     margin-top: 10px;
     display: none;
-    
 }
 
 #scores {
@@ -186,6 +185,27 @@ img {
     justify-content: center;
 }
 
+#gameResultsContainer {
+    height: 25rem;
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+}
+
+#gameResults {
+    margin: 10% auto 0 auto;
+}
+
+#gameResults h1{
+    font-size: 32px;
+    font-weight: bolder;
+    color: white;
+}
+
+#playAgainBtn {
+    margin-top: 0px;
+    display: none;
+}
 
 
 
