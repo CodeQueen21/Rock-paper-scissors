@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet"> 
     <link href="./css/styles.css" type="text/css" rel="stylesheet">
     <link href="./css/reset.css" type="text/css" rel="stylesheet">
-    <header>
+    <title>Rock, Paper, Scissors</title>
+  <header>
         <section id="title">
             <h1>Rock Paper Scissors</h1>
         </section>
@@ -19,7 +20,7 @@
         </section>
         <section id="game-container">
            <section id="scores">
-              <section id="your-score">
+              <section id="your-score" class="score">
                 <section class="heading">
                   <h2>Your Score</h2>
                 </section>
@@ -31,7 +32,7 @@
                 <section class="heading">
                   <h2>Round</h2>
                 </section>
-              <section class="points">
+              <section id="userPoints">
                   <p>0</p>
               </section>
              </section>
@@ -39,21 +40,18 @@
                 <section class="heading">
                   <h2>Opponent</h2>
                 </section>
-              <section class="points">
+              <section id="opponentPoints">
                   <p>0</p>
               </section>
              </section>
            </section>
+           <section id='roundResults'>
+              <h2>N/A</h2>
+           </section>
            <section id="options">
-            <section id="rock" class="option">
-                <img src="./images/rock.jpeg" alt="rock">
-            </section>
-            <section id="paper" class="option">
-                <img src="./images/paper.jpg" alt="rock">
-            </section>
-            <section id="rock" class="option">
-                <img src="./images/scissors.jpg" alt="rock">
-            </section>
+            <section id="rock" class="option"></section>
+            <section id="paper" class="option"></section>
+            <section id="scissors" class="option"></section>
            </section>
            <section id="chosen-option">
              <section id="your-choice" class="choice">
