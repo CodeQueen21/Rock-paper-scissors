@@ -196,9 +196,9 @@ img {
     margin: 10% auto 0 auto;
 }
 
-#gameResults h1{
+#gameResults h2{
     font-size: 32px;
-    font-weight: bolder;
+    font-weight: bold;
     color: white;
 }
 

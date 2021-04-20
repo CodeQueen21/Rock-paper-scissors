@@ -1,3 +1,4 @@
+//Used as refference for this project
 /*
 const choices = ["rock", "paper", "scissors"];
 let userPoints = 0;
@@ -56,6 +57,7 @@ function playGame() {
     }
   }
 */
+
 //playGame();
 
 const playButton = document.querySelector('button');
@@ -64,31 +66,54 @@ const titleContainer = document.getElementById('title');
 const title = document.querySelector('h1');
 const gameContainer = document.getElementById('game-container');
 const playButtonContainer = document.getElementById('play-btn-container');
-const chosenOptionContainer = document.getElementById('chosen-option');
-const nextRoundBtn = document.getElementById('next-round');
+const roundResultsContainer = document.getElementById('roundResults')
+const roundResults = document.getElementById('roundResults').querySelector('h2');
+const resultsContainer = document.getElementById('chosen-option');
+const userScore = document.getElementById('userPoints').querySelector('p');
+const roundNum = document.getElementById('roundPoints').querySelector('p');
+const opponentScore = document.getElementById('opponentPoints').querySelector('p');
+let userPoints = 0;
+let computerPoints = 0;
+let round = 1;
+let options = document.getElementById('options');
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
+let playerSelection;
+let computerSelection;
+const choices = ["rock", "paper", "scissors"];
+const yourResults = document.getElementById('your-choice').querySelector('p');
+const opponentResults = document.getElementById('opponent-choice').querySelector('p');
+const nextRoundBtn = document.getElementById('next-round').querySelector('button');
+const gameResultsContainer = document.getElementById('gameResultsContainer');
+const gameResults = document.getElementById('gameResults')
+const playAgainBtn = document.getElementById('playAgainBtn');
 
-rock.addEventListener('click', () => {
-    rock.style.backgroundColor = 'red';
-})
 
-function addGameStyle() {
-    body.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/background.jpg)';
-    titleContainer.style.backgroundColor = 'transparent';
-    title.style.color = 'white';
-}
 
-function removeGameContainer() {
-    playButton.style.display = 'none';
-    playButtonContainer.style.display = 'none';
-    gameContainer.style.display = 'block';
-    chosenOptionContainer.style.display = 'none';
-    nextRoundBtn.style.display = 'none';
-}
 
-playButton.addEventListener('click', () => {
-    addGameStyle();
-    removeGameContainer();
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
