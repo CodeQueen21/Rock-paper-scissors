@@ -193,6 +193,12 @@ function scoreCalc() {
    } 
 }
 
+playButton.addEventListener('click', () => {
+    addGameStyle();
+    removeGameContainer();
+    playGame();
+})
+
 
 
 
