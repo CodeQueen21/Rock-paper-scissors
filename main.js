@@ -233,6 +233,16 @@ function showGameResults() {
     playAgainBtn.style.display = 'block';
 }
 
+nextRoundBtn.addEventListener('click', () => {
+    roundCalc();
+    if(round === 5) {
+       nextRoundBtn.textContent = 'End Game';
+      }
+    if(nextRoundBtn.textContent === 'End Game') {
+          nextRoundBtn.onclick = showGameResults;
+      }
+   })
+
 
 
 
