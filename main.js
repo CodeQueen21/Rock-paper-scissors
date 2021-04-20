@@ -111,7 +111,25 @@ function computerPlay() {
 
   computerSelection = computerPlay();
 
-
+  function playRound(player, computer) {
+    if (player === computer) {
+        return "It's a tie!";
+    } else if (player === "rock" && computer === "paper") {
+        return "You Lose!";
+    }  else if (player === "paper" && computer === "rock") {
+        return "You Win!";
+    } else if (player === "paper" && computer === "scissors") {
+        return "You Lose!";
+    } else if (player === "scissors" && computer === "paper") {
+       return "You Win!";
+   } else if (player === "rock" && computer === "scissors") {
+       return "You Win!";
+   } else if (player === "scissors" && computer === "rock") {
+       return "You Lose!";
+   } else {
+      return "Oops, something went wrong!";
+    }
+}
 
 
 
