@@ -217,6 +217,16 @@ function isClicked(btn) {
     isClicked(scissors);
 }
 
+roundNum.textContent = round;
+
+function roundCalc() {
+    while(round < 5) {
+        playNextRound();
+        round++;
+        return roundNum.textContent = round;
+    }
+}
+
 
 
 
