@@ -89,6 +89,13 @@ const gameResultsContainer = document.getElementById('gameResultsContainer');
 const gameResults = document.getElementById('gameResults')
 const playAgainBtn = document.getElementById('playAgainBtn');
 
+function computerPlay() {
+    let selected = choices[Math.floor(Math.random()*choices.length)];
+    return selected;
+  }
+
+  computerSelection = computerPlay();
+
 
 
 
