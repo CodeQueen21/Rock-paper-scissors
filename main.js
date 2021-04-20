@@ -131,6 +131,56 @@ function computerPlay() {
     }
 }
 
+function playGame() {
+    rock.addEventListener('click', () => {
+        playerSelection = 'rock';
+        opponentResults.textContent = computerSelection;
+        playRound(playerSelection, computerSelection)
+        scoreCalc();
+        paper.style.display = 'none';
+        scissors.style.display = 'none';
+        userScore.textContent = userPoints;
+        opponentScore.textContent = computerPoints;
+        resultsContainer.style.display = 'block';
+        yourResults.textContent = 'rock';
+        nextRoundBtn.style.display = 'block';
+        roundResultsContainer.style.display = 'block'
+        roundResults.textContent = playRound(playerSelection, computerSelection)
+    })
+    
+    paper.addEventListener('click', () => {
+       playerSelection = 'paper';
+       opponentResults.textContent = computerSelection;
+       playRound(playerSelection, computerSelection)
+       scoreCalc();
+       userScore.textContent = userPoints;
+       opponentScore.textContent = computerPoints;
+       rock.style.display = 'none';
+       scissors.style.display = 'none';
+       resultsContainer.style.display = 'block';
+       yourResults.textContent = 'paper';
+       nextRoundBtn.style.display = 'block';
+       roundResultsContainer.style.display = 'block';
+       roundResults.textContent = playRound(playerSelection, computerSelection)
+    })
+    
+    scissors.addEventListener('click', () => {
+       playerSelection = 'scissors';
+       playRound(playerSelection, computerSelection)
+       scoreCalc();
+       userScore.textContent = userPoints;
+       opponentScore.textContent = computerPoints;
+       rock.style.display = 'none';
+       paper.style.display = 'none';
+       resultsContainer.style.display = 'block';
+       yourResults.textContent = 'scissors';
+       opponentResults.textContent = computerSelection;
+       nextRoundBtn.style.display = 'block';
+       roundResultsContainer.style.display = 'block'
+       roundResults.textContent = playRound(playerSelection, computerSelection)
+    })
+}
+
 
 
 
