@@ -227,6 +227,12 @@ function roundCalc() {
     }
 }
 
+function showGameResults() {
+    gameContainer.style.display = 'none';
+    gameResultsContainer.style.display = 'block';
+    playAgainBtn.style.display = 'block';
+}
+
 
 
 
