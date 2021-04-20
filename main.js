@@ -181,6 +181,18 @@ function playGame() {
     })
 }
 
+function scoreCalc() {
+    playRound(playerSelection, computerSelection);
+    
+    if (playRound(playerSelection, computerSelection) === "It's a tie!") {
+       return [userPoints++, computerPoints++];
+     } else if (playRound(playerSelection, computerSelection) === "You Win!") {
+       return userPoints++;
+     } else {
+        return computerPoints++;
+   } 
+}
+
 
 
 
