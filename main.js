@@ -199,6 +199,12 @@ playButton.addEventListener('click', () => {
     playGame();
 })
 
+function isClicked(btn) {
+    if(btn.style.display = 'none') {
+        btn.style.display = 'block';
+    }
+   }
+
 
 
 
