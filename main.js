@@ -89,6 +89,21 @@ const gameResultsContainer = document.getElementById('gameResultsContainer');
 const gameResults = document.getElementById('gameResults')
 const playAgainBtn = document.getElementById('playAgainBtn');
 
+function addGameStyle() {
+    body.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/background.jpg)';
+    titleContainer.style.backgroundColor = 'transparent';
+    title.style.color = 'white';
+}
+
+function removeGameContainer() {
+    playButton.style.display = 'none';
+    playButtonContainer.style.display = 'none';
+    gameContainer.style.display = 'block';
+    roundResultsContainer.style.display = 'none'
+    resultsContainer.style.display = 'none';
+    nextRoundBtn.style.display = 'none';
+}
+
 function computerPlay() {
     let selected = choices[Math.floor(Math.random()*choices.length)];
     return selected;
