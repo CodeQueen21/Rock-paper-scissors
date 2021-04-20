@@ -205,7 +205,17 @@ function isClicked(btn) {
     }
    }
 
-
+   function playNextRound() {
+    playButton.style.display = 'none';
+    playButtonContainer.style.display = 'none';
+    gameContainer.style.display = 'block';
+    roundResultsContainer.style.display = 'none'
+    resultsContainer.style.display = 'none';
+    nextRoundBtn.style.display = 'none';
+    isClicked(rock);
+    isClicked(paper);
+    isClicked(scissors);
+}
 
 
 
