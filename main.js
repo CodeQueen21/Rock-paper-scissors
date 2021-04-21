@@ -86,7 +86,7 @@ const yourResults = document.getElementById('your-choice').querySelector('p');
 const opponentResults = document.getElementById('opponent-choice').querySelector('p');
 const nextRoundBtn = document.getElementById('next-round').querySelector('button');
 const gameResultsContainer = document.getElementById('gameResultsContainer');
-const gameResults = document.getElementById('gameResults')
+const gameResults = document.getElementById('gameResults').querySelector('h2');
 const playAgainBtn = document.getElementById('playAgainBtn');
 
 function addGameStyle() {
@@ -241,8 +241,14 @@ nextRoundBtn.addEventListener('click', () => {
     if(nextRoundBtn.textContent === 'End Game') {
           nextRoundBtn.onclick = showGameResults;
       }
+      if(userPoints > computerPoints) {
+        return gameResults.textContent = 'Congradulations!!! You won!'
+    } else if(userPoints < computerPoints) {
+        return gameResults.textContent = 'Awwe, looks like you lost. Better Luck next time!'
+    } else {
+        return gameResults.textContent = 'It looks like it\'s a tie! Good Game!'
+    }
    })
-
 
 
 
