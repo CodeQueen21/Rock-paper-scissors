@@ -80,14 +80,15 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 let playerSelection;
-let computerSelection;
+
 const choices = ["rock", "paper", "scissors"];
 const yourResults = document.getElementById('your-choice').querySelector('p');
 const opponentResults = document.getElementById('opponent-choice').querySelector('p');
 const nextRoundBtn = document.getElementById('next-round').querySelector('button');
 const gameResultsContainer = document.getElementById('gameResultsContainer');
 const gameResults = document.getElementById('gameResults').querySelector('h2');
-const playAgainBtn = document.getElementById('playAgainBtn');
+const playAgainBtnContainer = document.getElementById('playAgainBtn');
+const playAgainBtn = document.getElementById('playAgainBtn').querySelector('button');
 
 function addGameStyle() {
     body.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/background.jpg)';
@@ -95,95 +96,72 @@ function addGameStyle() {
     title.style.color = 'white';
 }
 
-function removeGameContainer() {
+function addGameContainer() {
     playButton.style.display = 'none';
     playButtonContainer.style.display = 'none';
     gameContainer.style.display = 'block';
     roundResultsContainer.style.display = 'none'
     resultsContainer.style.display = 'none';
     nextRoundBtn.style.display = 'none';
+    options.style.display = 'block';
 }
 
-function computerPlay() {
-    let selected = choices[Math.floor(Math.random()*choices.length)];
-    return selected;
-  }
-
-  computerSelection = computerPlay();
-
-  function playRound(player, computer) {
-    if (player === computer) {
-        return "It's a tie!";
-    } else if (player === "rock" && computer === "paper") {
-        return "You Lose!";
-    }  else if (player === "paper" && computer === "rock") {
-        return "You Win!";
-    } else if (player === "paper" && computer === "scissors") {
-        return "You Lose!";
-    } else if (player === "scissors" && computer === "paper") {
-       return "You Win!";
-   } else if (player === "rock" && computer === "scissors") {
-       return "You Win!";
-   } else if (player === "scissors" && computer === "rock") {
-       return "You Lose!";
-   } else {
-      return "Oops, something went wrong!";
-    }
-}
+playButton.addEventListener('click', () => {
+    addGameStyle();
+    addGameContainer();
+    playGame();
+})
 
 function playGame() {
     rock.addEventListener('click', () => {
         playerSelection = 'rock';
-        opponentResults.textContent = computerSelection;
-        playRound(playerSelection, computerSelection)
         scoreCalc();
-        paper.style.display = 'none';
-        scissors.style.display = 'none';
-        userScore.textContent = userPoints;
-        opponentScore.textContent = computerPoints;
-        resultsContainer.style.display = 'block';
-        yourResults.textContent = 'rock';
-        nextRoundBtn.style.display = 'block';
-        roundResultsContainer.style.display = 'block'
-        roundResults.textContent = playRound(playerSelection, computerSelection)
+        showGameResults();
     })
     
     paper.addEventListener('click', () => {
-       playerSelection = 'paper';
-       opponentResults.textContent = computerSelection;
-       playRound(playerSelection, computerSelection)
-       scoreCalc();
-       userScore.textContent = userPoints;
-       opponentScore.textContent = computerPoints;
-       rock.style.display = 'none';
-       scissors.style.display = 'none';
-       resultsContainer.style.display = 'block';
-       yourResults.textContent = 'paper';
-       nextRoundBtn.style.display = 'block';
-       roundResultsContainer.style.display = 'block';
-       roundResults.textContent = playRound(playerSelection, computerSelection)
+        playerSelection = 'paper';
+        scoreCalc();
+        showGameResults();
+    
     })
     
     scissors.addEventListener('click', () => {
-       playerSelection = 'scissors';
-       playRound(playerSelection, computerSelection)
-       scoreCalc();
-       userScore.textContent = userPoints;
-       opponentScore.textContent = computerPoints;
-       rock.style.display = 'none';
-       paper.style.display = 'none';
-       resultsContainer.style.display = 'block';
-       yourResults.textContent = 'scissors';
-       opponentResults.textContent = computerSelection;
-       nextRoundBtn.style.display = 'block';
-       roundResultsContainer.style.display = 'block'
-       roundResults.textContent = playRound(playerSelection, computerSelection)
+        playerSelection = 'scissors';
+        scoreCalc();
+        showGameResults();
     })
 }
 
+
+function computerPlay() {
+    let selected = choices[Math.floor(Math.random() * choices.length)];
+    return selected;
+}
+
+let computerSelection = computerPlay();
+
+function playRound(player, computer) {
+    if (player === computer) {
+        return "It's a tie!";
+    } else if (player === "rock" && computer === "paper") {
+        return "You Lose!";
+    } else if (player === "paper" && computer === "rock") {
+        return "You Win!";
+    } else if (player === "paper" && computer === "scissors") {
+        return "You Lose!";
+    } else if (player === "scissors" && computer === "paper") {
+        return "You Win!";
+    } else if (player === "rock" && computer === "scissors") {
+        return "You Win!";
+    } else if (player === "scissors" && computer === "rock") {
+        return "You Lose!";
+    } else {
+        return "Oops, something went wrong!";
+    }
+}
+
 function scoreCalc() {
-    playRound(playerSelection, computerSelection);
-    
     if (playRound(playerSelection, computerSelection) === "It's a tie!") {
        return [userPoints++, computerPoints++];
      } else if (playRound(playerSelection, computerSelection) === "You Win!") {
@@ -193,31 +171,47 @@ function scoreCalc() {
    } 
 }
 
-playButton.addEventListener('click', () => {
-    addGameStyle();
-    removeGameContainer();
-    playGame();
-})
-
-function isClicked(btn) {
-    if(btn.style.display = 'none') {
-        btn.style.display = 'block';
-    }
-   }
-
-   function playNextRound() {
-    playButton.style.display = 'none';
-    playButtonContainer.style.display = 'none';
-    gameContainer.style.display = 'block';
-    roundResultsContainer.style.display = 'none'
-    resultsContainer.style.display = 'none';
-    nextRoundBtn.style.display = 'none';
-    isClicked(rock);
-    isClicked(paper);
-    isClicked(scissors);
+function showGameResults() {
+       options.style.display = 'none';
+       userScore.textContent = userPoints;
+       roundNum.textContent = round;
+       opponentScore.textContent = computerPoints;
+       resultsContainer.style.display = 'block';
+       yourResults.textContent = playerSelection;
+       opponentResults.textContent = computerSelection;
+       nextRoundBtn.style.display = 'block';
+       roundResultsContainer.style.display = 'block'
+       roundResults.textContent = playRound(playerSelection, computerSelection);
 }
 
-roundNum.textContent = round;
+function playNextRound() {
+    addGameContainer();
+    playGame();
+    computerSelection = computerPlay();
+}
+
+function endGameResults() {
+    gameContainer.style.display = 'none';
+    gameResultsContainer.style.display = 'block';
+    playAgainBtnContainer.style.display = 'block';
+    if (userPoints > computerPoints) {
+        return gameResults.textContent =  'Congradulations! You Won!!!'
+    } else if(userPoints < computerPoints) {
+        return gameResults.textContent =  'awwe, looks like you lost. Better luck next time.'
+    } else {
+        return gameResults.textContent =  'Looks like it\'s a tie! Good Game!';
+    }
+}
+
+nextRoundBtn.addEventListener('click', () => {
+    roundCalc();
+    if(round === 5) {
+        nextRoundBtn.textContent = 'End Game';
+       }
+     if(nextRoundBtn.textContent === 'End Game') {
+           nextRoundBtn.onclick = endGameResults;
+       }
+})
 
 function roundCalc() {
     while(round < 5) {
@@ -227,43 +221,7 @@ function roundCalc() {
     }
 }
 
-function showGameResults() {
-    gameContainer.style.display = 'none';
-    gameResultsContainer.style.display = 'block';
-    playAgainBtn.style.display = 'block';
-}
-
-nextRoundBtn.addEventListener('click', () => {
-    roundCalc();
-    if(round === 5) {
-       nextRoundBtn.textContent = 'End Game';
-      }
-    if(nextRoundBtn.textContent === 'End Game') {
-          nextRoundBtn.onclick = showGameResults;
-      }
-      if(userPoints > computerPoints) {
-        return gameResults.textContent = 'Congradulations!!! You won!'
-    } else if(userPoints < computerPoints) {
-        return gameResults.textContent = 'Awwe, looks like you lost. Better Luck next time!'
-    } else {
-        return gameResults.textContent = 'It looks like it\'s a tie! Good Game!'
-    }
-   })
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
+playAgainBtn.addEventListener('click', () => location.reload());
 
 
 
