@@ -91,7 +91,7 @@ const playAgainBtnContainer = document.getElementById('playAgainBtn');
 const playAgainBtn = document.getElementById('playAgainBtn').querySelector('button');
 
 function addGameStyle() {
-    body.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/background.jpg)';
+    body.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/background.JPG)';
     titleContainer.style.backgroundColor = 'transparent';
     title.style.color = 'white';
 }
