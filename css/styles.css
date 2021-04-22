@@ -207,6 +207,64 @@ img {
     display: none;
 }
 
+@media only screen and (max-width: 375px) {
+    #play-btn-container button{
+        margin-top: 85%;
+    }
+
+    #scores {
+        position: relative;
+        top: 35px;
+    }
+    
+    #your-score {
+        position: relative;
+        right: 30px;
+    }
+    
+    #round-score {
+        position: relative;
+        left: 15px;
+    }
+
+    #opponent-score {
+      position: relative;
+      left: 50px;
+    }
+
+    #options {
+        position: relative;
+        top: 55px;
+    }
+
+    #roundResults {
+        margin-top: 15px;
+    }
+    
+    #chosen-option {
+        position: relative;
+        right: 40px;
+    }
+
+    #next-round {
+        position: relative;
+        top: 40px;
+    }
+
+    #gameResults {
+        position: relative;
+        top: 120px;
+    }
+
+    #gameResults h2 {
+        font-size: 20px;
+    }
+
+    #playAgainBtn button {
+        position: relative;
+        top: 100px;
+    }
+}
 
 
 
