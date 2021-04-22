@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url('/images/background.jpg');
+    background-image: url('/images/background.JPG');
     
 }
 
@@ -107,7 +107,7 @@ header {
 }
 
 #rock {
-    background-image: url('/images/rock.jpeg');
+    background-image: url('/images/rock.JPEG');
     width: 151px;
     height: 125px;
     background-position: center;
@@ -116,7 +116,7 @@ header {
 }
 
 #paper {
-    background-image: url('/images/paper.jpg');
+    background-image: url('/images/paper.JPG');
     width: 151px;
     height: 125px;
     background-position: center;
@@ -125,7 +125,7 @@ header {
 }
 
 #scissors {
-    background-image: url('/images/scissors.jpg');
+    background-image: url('/images/scissors.JPG');
     width: 151px;
     height: 125px;
     background-position: center;
